@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萌乐游戏摄影棚</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f2a4a 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+            color: white;
+            margin-bottom: 40px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .header-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            margin: 0;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+            to { text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.6); }
+        }
+
+        .update-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 30px 60px;
+            border-radius: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.5em;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a[href*="tiktok"] { background: linear-gradient(45deg, #2b1055, #7597de); }
+        .social-links a[href*="douyin"] { background: linear-gradient(45deg, #1a1a1a, #0f2a4a); }
+        .social-links a[href*="instagram"] { background: linear-gradient(45deg, #2b1055, #0f2a4a); }
+        .social-links a[href*="threads"] { background: linear-gradient(45deg, #1a1a1a, #7597de); }
+        .social-links a[href*="westar"] { background: linear-gradient(45deg, #0f2a4a, #2b1055); }
+        .social-links a[href*="kuaishou"] { background: linear-gradient(45deg, #2b1055, #0f2a4a); }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8em; }
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .header-image {
+                width: 120px;
+                height: 120px;
+            }
+            .lang-switch {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+            .social-links {
+                padding: 20px;
+            }
+            .social-links a {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="S__17858564_0.jpg" alt="萌乐游戏摄影棚" class="header-image">
+                <h1>萌乐游戏摄影棚</h1>
+            </div>
+            <div class="update-info">
+                <h2>萌乐游戏摄影棚</h2>
+                <p>每周一、三、五、日固定更新，</p>
+                <p>其他时间不定时更新，</p>
+                <p>带你领略更多美好。</p>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="setLang('zh-CN')">简体中文</button>
+                <button class="lang-btn" onclick="setLang('zh-TW')">繁體中文</button>
+                <button class="lang-btn" onclick="setLang('en')">English</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="social-links">
+            <a href="https://www.tiktok.com/@fungamesnap?_t=ZS-8un2j8ee0pj&_r=1" target="_blank">TikTok</a>
+            <a href="https://www.douyin.com/user/self?from_tab_name=main" target="_blank">抖音</a>
+            <a href="https://www.instagram.com/fungamesnap?igsh=MXNhMGJsYzFxdHF2bw%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+            <a href="https://www.threads.net/@fungamesnap/post/DHV5z79yR5-?xmt=AQGzs7DVW4oOMu-nfjbQxvJF65HH-gR1BhTeXtPDoCFa_w" target="_blank">Threads</a>
+            <a href="https://westar.app.link/rucloH6cQRb" target="_blank">创星球</a>
+            <a href="https://www.kuaishou.com/profile/3xi388ctyd5fue6" target="_blank">快手</a>
+        </div>
+    </main>
+
+    <script src="js/lang.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent();
+            const currentLang = getCurrentLang();
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if (btn.textContent.includes(currentLang === 'zh-CN' ? '简体' : '繁體')) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
